@@ -1,0 +1,12 @@
+# /lib/systemd/system/fooapp.service
+[Unit]
+Description=Node.js as a system service.
+Documentation=https://example.com
+After=network.target
+[Service]
+Type=simple
+User=ubuntu
+ExecStart=/usr/bin/node /path/to/your/express/project/cluster.js
+Restart=on-failure
+[Install]
+WantedBy=multi-user.target
